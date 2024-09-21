@@ -1,0 +1,184 @@
+/*-- Reset --*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after, q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*-- Start editing from here --*/
+body {
+    background: #f7f7f7;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+/* Main Container */
+.main-container, .main-w3layouts {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Wrapper */
+.main-w3layouts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* Form Container */
+.form-container {
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-aligns all child elements */
+}
+
+/* Form Title */
+.form-title {
+    font-size: 1.75em;
+    margin: 1em;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Form Label Styles */
+.form-label {
+    font-size: 1em; /* Increased size for better readability */
+    margin: 0.5em; /* Spacing between label and input */
+    display: block;
+    color: #333;
+}
+
+/* Input Styles */
+.form-control {
+    font-size: 1em;
+    color: #333;
+    background: #f9f9f9;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 0.8em;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1em;
+}
+
+    .form-control:focus {
+        border-color: #28a745;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        outline: none;
+    }
+
+/* Button Styles */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+    padding: 0.8em 1.5em;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin: 1.5em 0; /* Slightly increased for better separation */
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+        transform: translateY(-2px);
+    }
+
+    .btn-success:active {
+        background-color: #163b26;
+        border-color: #163b26;
+        transform: translateY(0);
+    }
+
+/* Checkbox Styles */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 1em; /* Consistent size with labels */
+    margin-bottom: 1em;
+}
+
+    .checkbox-label input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+/* Anchor (Link) Styles */
+a {
+    text-decoration: none; /* Ensure no underline */
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+    a:hover, a:focus {
+        color: #28a745;
+        text-decoration: none; /* Ensure no underline on hover/focus */
+    }
+
+.link-success {
+    color: #28a745;
+}
+
+/* Validation Messages */
+.text-danger {
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 0.25em; /* Adjusted to fit better */
+    margin-bottom: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 1rem;
+    }
+
+    .form-container {
+        padding: 1rem;
+    }
+}

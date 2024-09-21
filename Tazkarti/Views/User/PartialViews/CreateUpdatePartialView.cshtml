@@ -1,0 +1,9 @@
+@using Microsoft.AspNetCore.Identity
+@model IdentityUser
+<div class="form-group">
+    <label asp-for="@Model.UserName" class="col-form-label">
+    </label>
+    <input asp-for="@Model.UserName" class="form-control"/>
+    <span as-validation-for="@Model.UserName" class="text-danger">
+    </span>
+</div>

@@ -1,0 +1,21 @@
+﻿@model Tazkarti.Models.BookTicketViewModel
+
+@{
+    ViewData["Title"] = "Book Ticket";
+}
+
+<h2>Book Ticket for @Model.Match.TeamA vs @Model.Match.TeamB</h2>
+
+<form asp-action="BookTicket" asp-route-matchId="@Model.MatchId" method="post">
+    <div class="form-group">
+        <label asp-for="UserName">Username</label>
+        <input asp-for="UserName" class="form-control" />
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <input asp-for="Price" class="form-control" type="number" step="0.01" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Book Ticket</button>
+</form>

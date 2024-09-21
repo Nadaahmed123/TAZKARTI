@@ -1,0 +1,37 @@
+﻿@model Tazkarti.Models.Match
+
+@{
+    ViewData["Title"] = "Create Match";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="TeamA"></label>
+        <input asp-for="TeamA" class="form-control" />
+        <span asp-validation-for="TeamA" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TeamB"></label>
+        <input asp-for="TeamB" class="form-control" />
+        <span asp-validation-for="TeamB" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MatchDate"></label>
+        <input asp-for="MatchDate" class="form-control" type="date" />
+    </div>
+    <div class="form-group">
+        <label asp-for="MatchTime"></label>
+        <input asp-for="MatchTime" class="form-control" type="time" />
+    </div>
+    <div class="form-group">
+        <label for="teamAImage">Team A Image</label>
+        <input type="file" name="teamAImage" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="teamBImage">Team B Image</label>
+        <input type="file" name="teamBImage" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Create Match</button>
+</form>

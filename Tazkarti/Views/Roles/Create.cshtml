@@ -1,0 +1,30 @@
+@model ApplicationRole
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h1>Create Role</h1>
+<br />
+<br />
+
+
+
+      <div class="row ">
+
+        <div class="col-6">
+            <form asp-action="Create" asp-controller="Roles">
+             @* @Html.ValidationSummary(true,"",new {@class="text-danger"}) *@
+                @* <input hidden asp-for="Id"/> *@
+                <Partial name="PartialViews/CreateUpdatePartialView" model="@Model"/>
+                <br/>
+                <input type="submit" value="Create" class="btn btn-primary " />
+                <a asp-action="Index" class=" btn btn-light">Back To List</a>
+            </form>
+        </div>
+      </div>
+ 
+ 
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    }

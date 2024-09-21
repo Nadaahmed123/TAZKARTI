@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="home-container">
+    <div class="text-center mb-4">
+        <h1 class="display-4 text-center">Welcome to Tazkarti</h1>
+        <p class="lead text-center">Book your match tickets easily!</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="home-image">
+                <img src="~/images/background.jpg" alt="Match Tickets" class="img-fluid rounded">
+            </div>
+        </div>
+        <div class="col-md-6 d-flex align-items-center">
+            <div class="home-text">
+                <h2 class="display-5 text-center">Easy Booking</h2>
+                <p class="text-center">Our platform simplifies the process of booking match tickets. With just a few clicks, you can secure your spot at the next big game.</p>
+                <a asp-controller="Match" asp-action="Index" class="btn btn-success btn-lg">View Matches</a>
+            </div>
+        </div>
+    </div>
+</div>

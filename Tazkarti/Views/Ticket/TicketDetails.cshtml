@@ -1,0 +1,13 @@
+﻿@model Tazkarti.Models.Ticket
+
+@{
+    ViewData["Title"] = "Ticket Details";
+}
+
+<h2>Ticket Details</h2>
+
+<div class="ticket-details">
+    <p><strong>Match:</strong> @Model.Match.TeamA vs @Model.Match.TeamB</p>
+    <p><strong>Booked By:</strong> @User.Identity.Name</p>
+    <p><strong>Price:</strong> @Model.Price.ToString("C")</p>  
+</div>

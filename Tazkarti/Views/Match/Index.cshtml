@@ -1,0 +1,118 @@
+﻿@model IEnumerable<Tazkarti.Models.Match>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Matches</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d00;
+            text-align: center;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #004d00;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+
+        a {
+            text-decoration: none;
+            color: #004d00;
+            font-weight: bold;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .action-link {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 16px;
+            color: #004d00;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upcoming Matches</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Team A</th>
+                    <th>Team B</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var match in Model)
+                {
+                    <tr>
+                        <td>
+                            <img src="@match.TeamAImage" alt="@match.TeamA" />
+                            @match.TeamA
+                        </td>
+                        <td>
+                            <img src="@match.TeamBImage" alt="@match.TeamB" />
+                            @match.TeamB
+                        </td>
+                        <td>@match.MatchDate.ToShortDateString()</td>
+                        <td>@match.MatchTime.ToString(@"hh\:mm")</td>
+                        <td>
+                            <a href="@Url.Action("BookTicket", "Ticket", new { matchId = match.Id })">Book Ticket</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @if (User.IsInRole("Admin"))
+        {
+            <a href="@Url.Action("Create", "Match")" class="action-link">Add Match</a>
+        }
+    </div>
+</body>
+</html>

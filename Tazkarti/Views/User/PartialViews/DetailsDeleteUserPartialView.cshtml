@@ -1,0 +1,11 @@
+@using Microsoft.AspNetCore.Identity
+@model IdentityUser
+<div class="form-group">
+    <label class="col-form-label" asp-for="@Model.UserName"></label>
+    <input class="form-control" asp-for="@Model.UserName" readonly   />
+</div>
+
+<div class="form-group">
+    <label asp-for="@Model.Email" class="col-form-label"></label>
+    <input asp-for="@Model.Email" class="form-control" readonly   />
+</div>
